@@ -47,14 +47,14 @@
 }
 
 .like-icon.is-liked .heart {
-	animation: heart 0.3s ease-in 0.1s 1 alternate;
+	animation: heartScaleLike 0.3s ease-in 0.1s 1 alternate;
 }
 
 .like-icon.is-liked .sparks {
-	animation: sparks 0.3s ease-in 0.3s 1 alternate;
+	animation: sparksHeartLike 0.3s ease-in 0.3s 1 alternate;
 }
 
-@keyframes heart {
+@keyframes heartScaleLike {
 	from {
 		transform: scale(1);
 	}
@@ -63,7 +63,7 @@
 	}
 }
 
-@keyframes sparks {
+@keyframes sparksHeartLike {
 	from {
 		opacity: 0;
 	}
@@ -72,7 +72,7 @@
 	}
 }
 
-@keyframes arrow {
+@keyframes arrowHeaderNav {
 	0% {
 		transform: translateX(0);
 	}
