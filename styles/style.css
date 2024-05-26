@@ -15,6 +15,316 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+	font-family: var(--page-main-font-family, "Inter", sans-serif);
+	background-color: var(--background-color, #ffffff);
+	background-image: var(--background-gradient, none);
+	background-size: cover;
+	background-attachment: fixed;
+	color: var(--text-color, #000000);
+	font-variation-settings: "wght" var(--main-weight, 400);
+	margin-block-start: 100px;
+	min-inline-size: 320px;
+	min-block-size: 100dvb;
+}
+
+.header {
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+	font-family: var(--accent-font-family, "PressStart2P", fantasy);
+	line-height: normal;
+	text-transform: uppercase;
+	margin-block-end: 99px;
+}
+
+.post {
+	margin-inline: auto;
+	border: 2px solid var(--text-color, #000000);
+	background: var(--background-color, #ffffff);
+	max-inline-size: 700px;
+}
+
+.header__title {
+	font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+	margin-block-start: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem);
+}
+
+.header__subtitle {
+	font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+	margin-block-start: 20px;
+}
+
+.header__theme-menu {
+	margin-block: 25px;
+}
+
+.theme-menu__list {
+	display: grid;
+	gap: 8px;
+	padding-inline-start: 20px;
+}
+
+.theme-menu__button {
+	position: relative;
+	border: none;
+	font-size: 14px;
+	text-transform: uppercase;
+	background: transparent;
+	transition: opacity 0.3s ease;
+	cursor: pointer;
+	appearance: none;
+}
+
+:is(.theme-menu__button:hover,
+.theme-menu__button:focus,
+.theme-menu__button:disabled) {
+	opacity: 0.6;
+	outline: none;
+}
+
+.theme-menu__button:disabled {
+	cursor: default;
+	pointer-events: none;
+}
+
+.theme-menu__button:not(:disabled):after {
+	content: "";
+	display: block;
+	background: currentColor;
+	transition: transform 0.3s ease;
+	transform: scaleX(0);
+	transform-origin: left;
+	block-size: 2px;
+}
+
+.theme-menu__button:focus-visible:after {
+	transform: scaleX(1);
+}
+
+.theme-menu__button:disabled:before {
+	content: "▶";
+	position: absolute;
+	animation: arrow 0.5s ease-in-out infinite alternate;
+	inset-inline-start: -20px;
+}
+
+.main {
+	display: grid;
+	justify-items: center;
+	gap: 55px;
+}
+
+.main__list {
+	display: grid;
+	gap: 50px;
+}
+
+.post__title {
+	border-block-end: 2px solid var(--text-color, #000000);
+	padding: 4px 9px;
+	font-size: 19px;
+}
+
+.post__image {
+	position: relative;
+}
+
+.post__image-label {
+	position: absolute;
+	z-index: 1;
+	inset-inline-end: 25px;
+	inset-block-start: 25px;
+	opacity: 0.5;
+	font-size: 14px;
+	font-family: var(--accent-font-family, "PressStart2P", fantasy);
+	mix-blend-mode: hard-light;
+}
+
+.post__image-img {
+	aspect-ratio: 1 / 1;
+	inline-size: 100%;
+}
+
+.post__content {
+	display: grid;
+	gap: 26px;
+	padding: 25px 30px 0 25px;
+	line-height: 21px;
+	font-size: 18px;
+}
+
+.post__button {
+	display: flex;
+	justify-content: flex-end;
+	align-items: stretch;
+	gap: 5px;
+	padding: 25px 25px;
+}
+
+.post__button-heart {
+	display: grid;
+	border: 2px solid transparent;
+	padding: 0;
+	background: transparent;
+	transition: border-color 0.3s ease;
+	cursor: pointer;
+	appearance: none;
+}
+
+:is(.post__button-heart:focus,
+.button:focus,
+.button:focus-visible) {
+	outline: none;
+}
+
+.post__button-heart:focus-visible {
+	border-color: var(--text-color, #000000);
+}
+
+.button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 9px 35px;
+	border: 2px solid var(--text-color, #000000);
+	background: var(--background-color, #ffffff);
+	transition: box-shadow 0.3s ease;
+	cursor: pointer;
+}
+
+.button:focus-visible {
+	box-shadow: 2px 2px var(--text-color, #000000);
+}
+
+.button:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background-color: var(--text-color, #000000);
+	transition: width 0.5s ease-in-out;
+}
+
+.button:hover::before {
+	transform: scaleX(1);
+	width: 100%;
+}
+
+.button__text {
+	font-family: var(--accent-font-family, "PressStart2P", fantasy);
+	font-size: 14px;
+	color: var(--button-text-color, #ffffff);
+}
+
+.button .button__text {
+	transition: color 0.5s ease-in-out;
+}
+
+.button:hover .button__text {
+	color: var(--button-text-color, #ffffff);
+}
+
+.button__save {
+	display: flex;
+	padding: 13px 14px;
+	gap: 10px;
+	font-family: var(--accent-font-family, "PressStart2P", fantasy);
+	font-size: 14px;
+	color: var(--button-text-color, #ffffff);
+}
+
+.button__floppy {
+	block-size: 22px;
+	inline-size: 22px;
+}
+
+.dialog {
+	max-inline-size: 357px;
+	font-family: var(--accent-font-family, "PressStart2P", fantasy);
+	color: var(--text-color, #000000);
+	background: var(--background-color, #ffffff);
+	border: 2px solid var(--text-color, #000000);
+	padding: 40px 30px;
+	line-height: 21px;
+	text-transform: uppercase;
+}
+
+.dialog::backdrop {
+	opacity: 0.75;
+	background: var(--background-color, #ffffff);
+}
+
+.dialog__content {
+	display: flex;
+	align-items: center;
+	gap: 27px;
+}
+
+.button_dialog-ok {
+	margin-block-start: 30px;
+	inline-size: 100%;
+}
+
+@supports (mix-blend-mode: difference) {
+	
+	.button:hover.button__text {
+		color: var(--button-text-color, #ffffff);
+	}
+	
+	.button__floppy-text,
+	.button__floppy {
+		color: var(--button-text-color, #ffffff);
+		mix-blend-mode: difference;
+	}
+	
+	.button__text {
+		mix-blend-mode: difference;
+	}
+}
+
+.filter-grayscale {
+	filter: grayscale(0.5) blur(1px);
+}
+
+.filter-contrast {
+	filter: contrast(175%) brightness(103%);
+}
+
+.filter-invert {
+	filter: invert(70%)
+}
+
+.filter-sepia {
+	filter: sepia(90%);
+}
+
+.filter-rotate {
+	filter: hue-rotate(120deg);
+}
+
+.filter-saturate {
+	filter: saturate(80%);
+}
+
+.filter-contrast {
+	filter: contrast(40%);
+}
+
+@supports (
+  (-webkit-text-stroke: 1px var(--background-color, #ffffff)) or
+    (text-stroke: 1px var(--background-color, #ffffff))
+) {
+	.post__image-label {
+		text-shadow: none;
+		-webkit-text-stroke: 1px var(--background-color, #ffffff);
+		text-stroke: 1px var(--background-color, #ffffff);
+	}
+}
+
+@media (width <= 375px) {
+	.post__content {
+		padding: 21px 30px 0 25px;
+	}
 }

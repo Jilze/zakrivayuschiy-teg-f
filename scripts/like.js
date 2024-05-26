@@ -9,8 +9,8 @@
 */
 
 const likeHeartArray = document.querySelectorAll('.like-icon');
-const likeButtonArray = document.querySelectorAll('.card__like-button');
-const iconButtonArray = document.querySelectorAll('.card__icon-button');
+const likeButtonArray = document.querySelectorAll('.post__like-button');
+const iconButtonArray = document.querySelectorAll('.post__button-heart');
 
 iconButtonArray.forEach((iconButton, index) => {
   iconButton.onclick = () =>
