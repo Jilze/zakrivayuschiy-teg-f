@@ -1,1 +1,1 @@
-git@github.com:Jilze/posmotri_v_okno.git
+https://github.com/Jilze/zakrivayuschiy-teg-f.git
