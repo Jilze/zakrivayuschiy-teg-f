@@ -112,7 +112,7 @@
 .main {
 	display: grid;
 	justify-items: center;
-	gap: 55px;
+	gap: 50px;
 }
 
 .main__list {
@@ -153,7 +153,7 @@
 .post__content {
 	display: grid;
 	gap: 26px;
-	padding: 25px 30px 0 25px;
+	padding: 30px 30px 0 25px;
 	line-height: 21px;
 	font-size: 18px;
 }
@@ -245,12 +245,11 @@
 }
 
 .dialog {
-	outline: 2px solid var(--text-color, #000000);
-	min-inline-size: 393px;
+	min-inline-size: 357px;
 	font-family: var(--accent-font-family, "PressStart2P", fantasy);
 	color: var(--text-color, #000000);
 	background: var(--background-color, #ffffff);
-	padding: 30px;
+	padding: 29px;
 	line-height: 21px;
 	text-transform: uppercase;
 }
@@ -265,31 +264,28 @@
 	display: grid;
 	grid-template-columns: repeat(2, min-content);
 	text-transform: uppercase;
-	gap: 27px;
+	gap: 20px;
 }
 
 .button_dialog-ok {
 	outline: 2px solid var(--text-color, #000000);
-	margin-block-start: 40px;
+	margin-block-start: 30px;
 	inline-size: 100%;
 	text-transform: uppercase;
-	padding: 11px 0;
-	font-size: 15px;
+	padding: 10px 0;
+	font-size: 14px;
 }
 
 .dialog__content-svg {
-	inline-size: 45px;
-	block-size: 45px;
+	inline-size: 39px;
+	block-size: 39px;
 }
 
 @supports (mix-blend-mode: difference) {
 	.button__floppy-text,
-	.button__floppy {
-		color: var(--button-text-color, #ffffff);
-		mix-blend-mode: difference;
-	}
-	
+	.button__floppy,
 	.button__text {
+		color: var(--button-text-color, #ffffff);
 		mix-blend-mode: difference;
 	}
 }
@@ -335,22 +331,30 @@
 
 @media (width <= 375px) {
 	.post__title {
-		padding: 6px 10px;
+		padding: 5px 10px;
 		font-size: 18px;
 	}
 	
+	.main {
+		gap: 50px;
+	}
+	
 	.post__content {
-		padding: 27px 27px 0 25px;
+		padding: 28px 26px 0 25px;
 	}
 	
 	.button__save {
 		flex-direction: column;
-		padding: 16px 0;
+		padding: 14px 0;
 		inline-size: 306px;
 	}
 	
 	.button__floppy {
-		block-size: 25px;
-		inline-size: 25px;
+		block-size: 28px;
+		inline-size: 28px;
+	}
+	
+	.dialog {
+		min-inline-size: 341px;
 	}
 }
